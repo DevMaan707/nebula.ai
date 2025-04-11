@@ -10,14 +10,14 @@ class ParameterSlider extends StatelessWidget {
   final Function(double) onChanged;
 
   const ParameterSlider({
-    Key? key,
+    super.key,
     required this.name,
     required this.value,
     required this.min,
     required this.max,
     this.step = 0.1,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ParameterSlider extends StatelessWidget {
         children: [
           Text(
             name,
-            style: AppTextThemes.caption(color: Colors.grey),
+            style: AppTextThemes.caption(color: Colors.white),
           ),
           const SizedBox(height: 8),
           Row(
@@ -66,7 +66,7 @@ class ParameterSlider extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: Text(
                   value.toString(),
-                  style: AppTextThemes.caption(),
+                  style: AppTextThemes.caption(color: Colors.white),
                 ),
               ),
             ],
@@ -82,10 +82,10 @@ class AdvancedToggle extends StatelessWidget {
   final Function(bool) onToggled;
 
   const AdvancedToggle({
-    Key? key,
+    super.key,
     required this.isActive,
     required this.onToggled,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

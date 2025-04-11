@@ -9,10 +9,10 @@ class NebulaBottomNavBar extends StatelessWidget {
   final Function(int) onTabChanged;
 
   const NebulaBottomNavBar({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.onTabChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

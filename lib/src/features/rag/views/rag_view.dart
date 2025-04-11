@@ -24,7 +24,6 @@ class RagView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildHeader(),
               _buildKnowledgeBasesSection(),
               _buildUploadSection(),
               _buildRecentQueriesSection(),
@@ -35,44 +34,13 @@ class RagView extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.primary,
-        child: const Icon(Icons.add, color: Colors.white),
         onPressed: controller.createNewKnowledgeBase,
+        child: const Icon(Icons.add, color: Colors.white),
       ),
       bottomNavigationBar: Obx(() => NebulaBottomNavBar(
             currentIndex: controller.selectedTabIndex.value,
             onTabChanged: controller.changeTab,
           )),
-    );
-  }
-
-  Widget _buildHeader() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
-          child: ShaderMask(
-            shaderCallback: (bounds) => LinearGradient(
-              colors: [AppColors.primary, AppColors.accent],
-            ).createShader(bounds),
-            child: Text(
-              'Knowledge Base',
-              style: AppTextThemes.heading4(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-          child: Text(
-            'Create and manage knowledge bases for your AI models to retrieve accurate information and provide context-aware responses.',
-            style: AppTextThemes.bodyMedium(color: Colors.grey),
-          ),
-        ),
-        const Divider(height: 1),
-      ],
     );
   }
 

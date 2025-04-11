@@ -161,7 +161,7 @@ class EmbeddingModelCard extends StatelessWidget {
                 ),
                 Text(
                   type,
-                  style: AppTextThemes.caption(color: Colors.grey),
+                  style: AppTextThemes.caption(color: Colors.white),
                 ),
               ],
             ),

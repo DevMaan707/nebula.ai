@@ -188,7 +188,7 @@ class KnowledgeBaseCard extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             description,
-            style: AppTextThemes.caption(color: AppColors.accent),
+            style: AppTextThemes.caption(color: Colors.white),
           ),
           const SizedBox(height: 12),
           Wrap(
